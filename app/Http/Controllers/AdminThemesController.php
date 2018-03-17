@@ -9,12 +9,12 @@ class AdminThemesController extends Controller
 {
     public function show(Theme $theme)
     {
-        return view('adminThemes\show', compact('theme'));
+        return view('adminThemes.show', compact('theme'));
     }
 
     public function create()
     {
-        return view('adminThemes\create');
+        return view('adminThemes.create');
     }
 
     public function store(Request $request)
