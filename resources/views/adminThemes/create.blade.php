@@ -21,9 +21,9 @@
 
                     <form method="POST" action="{{ route('admin.themes.store') }}">
                         {{ csrf_field() }}
-                        Name:<br>
-                        <input type="text" name="title" value="{{ old('title') }}"><br>
                         Title:<br>
+                        <input type="text" name="title" value="{{ old('title') }}"><br>
+                        Scope:<br>
                         <input type="text" name="scope" value="{{ old('scope') }}"><br>
 
                         <button type="submit">Save</button>
