@@ -25,6 +25,8 @@
                         <input type="text" name="title" value="{{ old('title') }}"><br>
                         Scope:<br>
                         <input type="text" name="scope" value="{{ old('scope') }}"><br>
+                        Image:<br>
+                        <input type="text" name="img_link" value="{{ old('img_link') }}"><br>
 
                         <button type="submit">Save</button>
 
