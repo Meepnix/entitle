@@ -26,4 +26,10 @@ class Theme extends Model
         return $this->create($request->all());
 
     }
+
+    public function addOption(Request $request)
+    {
+        return $this->options()->create($request->all());
+
+    }
 }

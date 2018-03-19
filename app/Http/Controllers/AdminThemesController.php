@@ -7,9 +7,10 @@ use App\Theme;
 
 class AdminThemesController extends Controller
 {
-    public function show(Theme $theme)
+    public function show()
     {
-        return view('adminThemes.show', compact('theme'));
+        $themes = Theme::all();
+        return view('adminThemes.show', compact('themes'));
     }
 
     public function create()
@@ -23,7 +24,7 @@ class AdminThemesController extends Controller
 
         $new->addTheme($request);
 
-        return redirect()->route('adminThemes.show')->with('flash_message', 'Theme created');
+        return redirect()->route('admin.themes.show')->with('flash_message', 'Theme created');
     }
 
 }

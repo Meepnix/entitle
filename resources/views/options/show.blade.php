@@ -10,36 +10,33 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
-                <div class="panel-heading"><h2>Themes</h2></div>
-                    <a href="{{ route('admin.themes.create') }}" class="btn btn-primary">
-                        <i class="fa fa-btn fa-plus-square"></i>Create theme
-                    </a>
+                <div class="panel-heading"><h2>Max options</h2></div>
+                <h2>Max options for{{ $theme->title }}</h2>
+                <h2>Scope</h2>
+                <p>{{ $theme->scope }}</p>
                 <div class="panel-body">
 
-                    @foreach ($themes as $key => $theme)
+                    @foreach ($theme->options as $key => $option)
                     <div id="accordion" role="tablist">
                         <div class="card">
                             <div class="card-header" role="tab" id="heading{{ $key }}">
                                 <h5 class="mb-0">
                                     <a data-toggle="collapse" href="#collapse{{ $key }}" aria-expanded="true" aria-controls="collapse{{ $key }}">
-                                        {{ $theme->title }}
+                                        {{ $option->title }}
                                     </a>
                                 </h5>
-                                <span class="pull-right">
-                                    <a href="{{ route('admin.options.create', [$theme->id]) }}" class="btn btn-primary">
-                                        <i class="fa fa-btn fa-plus-square"></i>Create option
-                                    </a>
-                                </span>
                             </div>
 
                             <div id="collapse{{ $key }}" class="collapse" role="tabpanel" aria-labelledby="heading{{ $key }}" data-parent="#accordion">
                                 <div class="card-body">
-                                    @foreach ($theme->options as $option)
-                                    <li class="list-group-item clearfix">
-                                        {{ $option->title }}
-
-                                    </li>
-                                    @endforeach
+                                    <h4></h4>
+                                    <p>{{ $option->advice }}</p>
+                                    <h4></h4>
+                                    <p>{{ $option->aic }}</p>
+                                    <h4></h4>
+                                    <p>{{ $option->refs }}</p>
+                                    <h4></h4>
+                                    <p>{{ $option->tags }}</p>
                                 </div>
                             </div>
                         </div>
