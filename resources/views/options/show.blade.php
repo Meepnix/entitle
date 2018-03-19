@@ -10,9 +10,8 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
-                <div class="panel-heading"><h2>Max options</h2></div>
-                <h2>Max options for{{ $theme->title }}</h2>
-                <h2>Scope</h2>
+                <div class="panel-heading"><h2>Max options for: {{ $theme->title }}</h2></div>
+                <h4>Scope:</h4>
                 <p>{{ $theme->scope }}</p>
                 <div class="panel-body">
 
@@ -29,14 +28,23 @@
 
                             <div id="collapse{{ $key }}" class="collapse" role="tabpanel" aria-labelledby="heading{{ $key }}" data-parent="#accordion">
                                 <div class="card-body">
-                                    <h4></h4>
+                                    <h4>Advice</h4>
                                     <p>{{ $option->advice }}</p>
-                                    <h4></h4>
+                                    <h4>AIC and local outcome codes</h4>
                                     <p>{{ $option->aic }}</p>
-                                    <h4></h4>
+                                    <h4>Advice Guide Ref and Link</h4>
                                     <p>{{ $option->refs }}</p>
-                                    <h4></h4>
+                                    <h4>Referral Tag</h4>
                                     <p>{{ $option->tags }}</p>
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                        <label class="form-check-label" for="exampleCheck1">Mark for inclusion in client Maximization list</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck2">
+                                        <label class="form-check-label" for="exampleCheck2">Mark for inclusion in list of identified maximization (for worker’s use)</label>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>

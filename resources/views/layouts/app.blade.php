@@ -39,18 +39,12 @@
            <div id="sidebar-wrapper">
                <ul class="sidebar-nav">
                     <li class="sidebar-brand">
-                        <a href="#">
-                            {{ Auth::user()->name }}
-                        </a>
                     </li>
                     <li>
-                        <a href="#">Home</a>
+                        <a href="{{ route('admin.themes.show') }}">Admin Themes</a>
                     </li>
                     <li>
-                        <a href="#">Locations</a>
-                    </li>
-                    <li>
-                        <a href="#">Statistics</a>
+                        <a href="{{ route('themes.show') }}">User Themes</a>
                     </li>
 
                 </ul>
@@ -84,8 +78,8 @@
                                         </a>
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                             <a class="dropdown-item" href="{{ route('logout') }}"><i class="fa fa-btn fa-sign-out"></i>{{ __('Logout') }}</a>
-                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                                @csrf
+                                            <form class="dropdown-item" id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            @csrf
                                             </form>
                                         </div>
                                     </div>

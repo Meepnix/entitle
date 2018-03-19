@@ -7,6 +7,11 @@ use App\Theme;
 
 class AdminThemesController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function show()
     {
         $themes = Theme::all();
