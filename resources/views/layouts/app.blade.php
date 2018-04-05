@@ -19,6 +19,8 @@
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
     <link href="{{ asset('css/sidebar2.css') }}" rel="stylesheet">
 
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
     <style>
         body {
             font-family: 'Lato';
