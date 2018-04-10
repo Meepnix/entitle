@@ -50,10 +50,18 @@
             </div>
 
             <span class="pull-right">
-                <a href="{{ route('stepa.show') }}" class="btn btn-primary">
+                <a href="{{ route('stepc.show') }}" class="btn btn-primary">
                     Next <i class="fa fa-btn fa-arrow-circle-right"></i>
                 </a>
             </span>
+
+            <span class="pull-left">
+                <a href="{{ route('stepa.show') }}" class="btn btn-primary">
+                  <i class="fa fa-btn fa-arrow-circle-left"></i>Back 
+                </a>
+            </span>
+
+
 
 
 

@@ -33,6 +33,11 @@ Route::get('/stepb', function () {
 })->name('stepb.show');
 
 
+Route::get('/stepc', function () {
+    return view('userStepc.show');
+})->name('stepc.show');
+
+
 
 /* Admin */
 Route::get('/admin/themes', 'AdminThemesController@show')->name('admin.themes.show');
