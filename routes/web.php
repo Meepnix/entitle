@@ -32,10 +32,13 @@ Route::get('/stepb', function () {
     return view('userStepB.show');
 })->name('stepb.show');
 
-
 Route::get('/stepc', function () {
     return view('userStepc.show');
 })->name('stepc.show');
+
+Route::get('/stepd', function () {
+    return view('userStepd.show');
+})->name('stepd.show');
 
 
 

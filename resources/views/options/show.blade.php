@@ -36,20 +36,26 @@
                                     <p>{{ $option->refs }}</p>
                                     <h4>Referral Tag</h4>
                                     <p>{{ $option->tags }}</p>
-                                    <div class="form-check">
-                                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                        <label class="form-check-label" for="exampleCheck1">Mark for inclusion in client Maximization list</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input type="checkbox" class="form-check-input" id="exampleCheck2">
-                                        <label class="form-check-label" for="exampleCheck2">Mark for inclusion in list of identified maximization (for worker’s use)</label>
-                                    </div>
+                                    <p>
+                                        <input type="checkbox" id="exampleCheck1">
+                                        <label for="exampleCheck1">Mark for inclusion in client Maximization list</label>
+                                    </p>
+                                    <p>
+                                        <input type="checkbox" id="exampleCheck2">
+                                        <label for="exampleCheck2">Mark for inclusion in list of identified maximization (for worker’s use)</label>
+                                    </p>
 
                                 </div>
                             </div>
                         </div>
                     @endforeach
                     </div>
+
+                    <span class="pull-left">
+                        <a href="{{ route('themes.show') }}" class="btn btn-primary">
+                            <i class="fa fa-btn fa-arrow-circle-left"></i>Back
+                        </a>
+                    </span>
 
                     @if (count($errors) > 0)
                         <div class="alert alert-danger">

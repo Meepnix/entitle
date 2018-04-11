@@ -19,7 +19,7 @@
                     <h3>Generalist Casework referrals</h3>
                     <p>can be made if issues raised include: (tick the box if they apply)</p>
                     <p>
-                        <input type="checkbox" id="Check1" v-model="stat1">
+                        <input type="checkbox" id="Check1" v-model="stat1" :disabled="stat2">
                         <label for="Check1">PIP2 forms, ESA 50 forms, Benefit Supersessions, Reconsiderations</label>
                     </p>
                 </div>
@@ -27,7 +27,7 @@
                     <h3>Specialist Referrals</h3>
                     <p>can be made if issues raised include: (tick the box if they apply)</p>
                     <p>
-                        <input type="checkbox" id="Check2" v-model="stat2">
+                        <input type="checkbox" id="Check2" v-model="stat2" :disabled="stat1">
                         <label for="Check2">Appeals or post tribunal advice</label>
                     </p>
                 </div>
@@ -42,8 +42,12 @@
 
             </div>
 
-            <span class="pull-right">
-                <a href="{{ route('stepa.show') }}" class="btn btn-primary">
+
+
+            <span v-if="stat1 || stat2">
+            </span>
+            <span v-else  class="pull-right">
+                <a href="{{ route('stepd.show') }}" class="btn btn-primary">
                     Next <i class="fa fa-btn fa-arrow-circle-right"></i>
                 </a>
             </span>

@@ -23,7 +23,8 @@
                     </div>
 
                     @endforeach
-                    </div>
+                </div>
+
 
                     @if (count($errors) > 0)
                         <div class="alert alert-danger">
@@ -35,8 +36,17 @@
                         </div>
                     @endif
 
+                    <span class="pull-left">
+                        <a href="{{ route('stepd.show') }}" class="btn btn-primary">
+                            <i class="fa fa-btn fa-arrow-circle-left"></i>Back
+                        </a>
+                    </span>
+
                 </div>
+
+
             </div>
+
         </div>
     </div>
 </div>

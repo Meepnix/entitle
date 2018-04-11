@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use App\Option;
+use App\Trigger;
 
 class Theme extends Model
 {
@@ -19,6 +20,11 @@ class Theme extends Model
     public function options()
     {
         return $this->hasMany('App\Option');
+    }
+
+    public function triggers()
+    {
+        return $this->belongsToMany('App\Trigger');
     }
 
     public function addTheme(Request $request)
