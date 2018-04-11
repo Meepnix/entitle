@@ -44,7 +44,7 @@
             </div>
             <div v-if="stat1 || stat2 || stat3 || stat4" class="alert alert-danger" role="alert">
                 <p>Consider if referral can be made, otherwise skip referral step.</p>
-                <a href="{{ route('stepa.show') }}" class="btn btn-primary">
+                <a href="{{ route('stepd.show') }}" class="btn btn-primary">
                     Skip referral <i class="fa fa-btn fa-arrow-circle-right"></i>
                 </a>
             </div>
@@ -57,7 +57,7 @@
 
             <span class="pull-left">
                 <a href="{{ route('stepa.show') }}" class="btn btn-primary">
-                  <i class="fa fa-btn fa-arrow-circle-left"></i>Back 
+                  <i class="fa fa-btn fa-arrow-circle-left"></i>Back
                 </a>
             </span>
 
