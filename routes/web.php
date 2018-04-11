@@ -33,11 +33,11 @@ Route::get('/stepb', function () {
 })->name('stepb.show');
 
 Route::get('/stepc', function () {
-    return view('userStepc.show');
+    return view('userStepC.show');
 })->name('stepc.show');
 
 Route::get('/stepd', function () {
-    return view('userStepd.show');
+    return view('userStepD.show');
 })->name('stepd.show');
 
 
