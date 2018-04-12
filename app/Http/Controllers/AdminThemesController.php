@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Theme;
+use App\Trigger;
 
 class AdminThemesController extends Controller
 {
@@ -20,14 +21,18 @@ class AdminThemesController extends Controller
 
     public function create()
     {
-        return view('adminThemes.create');
+        $triggersCRF = Trigger::where('type', 'CRF')->pluck('trigger', 'id');
+        $triggersYRBC = Trigger::where('type', 'YRBC')->pluck('trigger', 'id');
+        return view('adminThemes.create', compact('triggersCRF', 'triggersYRBC'));
     }
 
     public function store(Request $request)
     {
         $new = new Theme();
 
-        $new->addTheme($request);
+        $theme = $new->addTheme($request);
+
+        $theme->triggers()->attach($request->input('triggers'));
 
         return redirect()->route('admin.themes.show')->with('flash_message', 'Theme created');
     }

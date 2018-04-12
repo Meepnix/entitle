@@ -33,6 +33,15 @@
                             <label for="img1">Image</label>
                             <input class="form-control" id="img1" type="text" name="img_link" value="{{ old('img_link') }}" placeholder="\img\test.png"><br>
                         </div>
+                        <div class="form-group">
+                            {!! Form::label('triggers', 'Triggers CRF:') !!}
+                            {!! Form::select('triggers[]', $triggersCRF, null, ['class' => 'form-control', 'multiple']) !!}
+                        </div>
+
+                        <div class="form-group">
+                            {!! Form::label('triggers', 'Triggers YRBC:') !!}
+                            {!! Form::select('triggers[]', $triggersYRBC, null, ['class' => 'form-control', 'multiple']) !!}
+                        </div>
 
                         <button type="submit">Save</button>
 

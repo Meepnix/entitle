@@ -46,6 +46,9 @@
                         <a href="{{ route('admin.themes.show') }}">Admin Themes</a>
                     </li>
                     <li>
+                        <a href="{{ route('admin.triggers.show') }}">Admin Triggers</a>
+                    </li>
+                    <li>
                         <a href="{{ route('themes.show') }}">User Themes</a>
                     </li>
 

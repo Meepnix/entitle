@@ -24,7 +24,7 @@ class Theme extends Model
 
     public function triggers()
     {
-        return $this->belongsToMany('App\Trigger');
+        return $this->belongsToMany('App\Trigger')->withTimestamps();
     }
 
     public function addTheme(Request $request)

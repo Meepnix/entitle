@@ -15,19 +15,19 @@ class AdminTriggersController extends Controller
     public function show()
     {
         $triggers = Trigger::all();
-        return view('adminTrigger.show', compact('triggers'));
+        return view('adminTriggers.show', compact('triggers'));
     }
 
     public function create()
     {
-        return view('adminTrigger.create');
+        return view('adminTriggers.create');
     }
 
     public function store(Request $request)
     {
         $new = new Trigger();
 
-        $new->addTheme($request);
+        $new->addTrigger($request);
 
         return redirect()->route('admin.triggers.show')->with('flash_message', 'Trigger created');
     }

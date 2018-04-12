@@ -14,7 +14,6 @@ class CreateThemeTriggerTable extends Migration
     public function up()
     {
         Schema::create('theme_trigger', function (Blueprint $table) {
-            $table->increments('id');
             $table->integer('theme_id')->unsigned()->index();
             $table->integer('trigger_id')->unsigned()->index();
             $table->foreign('theme_id')->references('id')->on('themes')->onDelete('cascade');

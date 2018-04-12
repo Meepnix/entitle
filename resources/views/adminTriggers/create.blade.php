@@ -22,14 +22,15 @@
                     <form method="POST" action="{{ route('admin.triggers.store') }}">
                         {{ csrf_field() }}
                         <div class="form-group">
-                            <select name="type">
-                                <option value="CRF">CRF</option>
-                                <option value="YRBC">YRBC</option>
+                            <label for="type1">Type</label>
+                            <select name="type" id="type1">
+                                <option value="CRF" {{ old('type') == 'CRF' ? 'selected' : '' }}>CRF</option>
+                                <option value="YRBC" {{ old('type') == 'YRBC' ? 'selected' : '' }}>YRBC</option>
                             </select> <br>
                         </div>
                         <div class="form-group">
-                            <label for="scope1">Trigger</label>
-                            <textarea class="form-control" id="scope1" name="scope" rows="3" value="{{ old('scope') }}"></textarea><br>
+                            <label for="trigger1">Trigger</label>
+                            <input type="text" class="form-control" id="trigger1" name="trigger" value="{{ old('trigger') }}"></input><br>
                         </div>
 
                         <button type="submit">Save</button>

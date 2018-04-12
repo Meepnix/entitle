@@ -43,6 +43,10 @@ Route::get('/stepd', function () {
 
 
 /* Admin */
+Route::get('/admin/triggers', 'AdminTriggersController@show')->name('admin.triggers.show');
+Route::get('/admin/triggers/create', 'AdminTriggersController@create')->name('admin.triggers.create');
+Route::post('/admin/triggers/store', 'AdminTriggersController@store')->name('admin.triggers.store');
+
 Route::get('/admin/themes', 'AdminThemesController@show')->name('admin.themes.show');
 Route::get('/admin/themes/create', 'AdminThemesController@create')->name('admin.themes.create');
 Route::post('/admin/themes/store', 'AdminThemesController@store')->name('admin.themes.store');
