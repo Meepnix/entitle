@@ -12,7 +12,7 @@ class ThemeController extends Controller
     {
 
         $themes = Theme::whereHas('triggers', function ($query) use ($request) {
-            $query->where('id', $request->triggers);
+            $query->whereIn('id', $request->triggers);
         })->get();
 
         return view('themes.show', compact('themes'));
