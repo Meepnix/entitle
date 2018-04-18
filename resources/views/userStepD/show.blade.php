@@ -25,25 +25,50 @@
                 <p>Record potential max, relevant tags</p>
             </div>
 
-
-            <span class="pull-right">
-                <a href="{{ route('themes.show') }}" class="btn btn-primary">
-                    Next <i class="fa fa-btn fa-arrow-circle-right"></i>
-                </a>
-            </span>
-
-            <span class="pull-left">
-                <a href="{{ route('stepc.show') }}" class="btn btn-primary">
-                    <i class="fa fa-btn fa-arrow-circle-left"></i>Back
-                </a>
-            </span>
+        </div>
 
 
+
+    </div>
+    <form method="GET" action="{{ route('themes.show') }}">
+        {{ csrf_field() }}
+        <div class="row">
+            <div class="col">
+                <h3>CRF Questions answered</h3>
+                @foreach ($triggersCRF as $triggerCRF)
+                    {!! Form::label($triggerCRF->trigger, $triggerCRF->trigger); !!}
+                    {!! Form::checkbox('triggers[]', $triggerCRF->id) !!}
+                @endforeach
+
+                </div>
+
+            <div class="col">
+                <h3>YRBC Questions answered</h3>
+                @foreach ($triggersYRBC as $triggerYRBC)
+                    {!! Form::label($triggerYRBC->trigger, $triggerYRBC->trigger); !!}
+                    {!! Form::checkbox('triggers[]', $triggerYRBC->id) !!}
+                @endforeach
+
+            </div>
 
 
         </div>
+        <span class="pull-right">
+            <button type="submit" class="btn btn-primary">Next <i class="fa fa-btn fa-arrow-circle-right"></i></button>
+        </span>
 
-    </div>
+        <span class="pull-left">
+            <a href="{{ route('stepc.show') }}" class="btn btn-primary">
+                <i class="fa fa-btn fa-arrow-circle-left"></i>Back
+            </a>
+        </span>
+
+    </form>
+
+
+
+
+
 
 </div>
 

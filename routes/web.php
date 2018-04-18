@@ -36,10 +36,10 @@ Route::get('/stepc', function () {
     return view('userStepC.show');
 })->name('stepc.show');
 
-Route::get('/stepd', function () {
-    return view('userStepD.show');
-})->name('stepd.show');
+Route::get('/stepd', 'StepdController@show')->name('stepd.show');
 
+Route::get('/themes', 'ThemeController@show')->name('themes.show');
+Route::get('/themes/{theme}/options', 'OptionController@show')->name('options.show');
 
 
 /* Admin */
@@ -53,6 +53,3 @@ Route::post('/admin/themes/store', 'AdminThemesController@store')->name('admin.t
 
 Route::get('/admin/themes/{theme}/options/create', 'AdminOptionsController@create')->name('admin.options.create');
 Route::post('/admin/themes/{theme}/options/store', 'AdminOptionsController@store')->name('admin.options.store');
-
-Route::get('/themes', 'ThemeController@show')->name('themes.show');
-Route::get('/themes/{theme}/options', 'OptionController@show')->name('options.show');
