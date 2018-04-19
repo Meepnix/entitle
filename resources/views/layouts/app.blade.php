@@ -37,7 +37,7 @@
         <div id="wrapper">
 
            <!-- Sidebar -->
-           @if (!Auth::guest())
+           @can('admin-access')
            <div id="sidebar-wrapper">
                <ul class="sidebar-nav">
                     <li class="sidebar-brand">
@@ -54,7 +54,7 @@
 
                 </ul>
             </div>
-            @endif
+            @endcan
 
            <!-- /#sidebar-wrapper -->
 

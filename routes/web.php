@@ -26,15 +26,15 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/', function () {
     return view('userStepA.show');
-})->name('stepa.show');
+})->name('stepa.show')->middleware('auth');
 
 Route::get('/stepb', function () {
     return view('userStepB.show');
-})->name('stepb.show');
+})->name('stepb.show')->middleware('auth');
 
 Route::get('/stepc', function () {
     return view('userStepC.show');
-})->name('stepc.show');
+})->name('stepc.show')->middleware('auth');
 
 Route::get('/stepd', 'StepdController@show')->name('stepd.show');
 
