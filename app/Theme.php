@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use App\Option;
 use App\Trigger;
+use App\Save;
 
 class Theme extends Model
 {
@@ -25,6 +26,11 @@ class Theme extends Model
     public function triggers()
     {
         return $this->belongsToMany('App\Trigger')->withTimestamps();
+    }
+
+    public function saves()
+    {
+        return $this->belongsToMany('App\Save')->withTimestamps();
     }
 
     public function addTheme(Request $request)

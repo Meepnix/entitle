@@ -37,7 +37,7 @@
                                     <h4>Referral Tag</h4>
                                     <p>{{ $option->tags }}</p>
                                     <p>
-                                        <input type="checkbox" id="exampleCheck1">
+                                        
                                         <label for="exampleCheck1">Mark for inclusion in client Maximization list</label>
                                     </p>
                                     <p>
