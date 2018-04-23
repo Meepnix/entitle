@@ -14,7 +14,10 @@ class CreateTableSnapTheme extends Migration
     public function up()
     {
         Schema::create('snap_theme', function (Blueprint $table) {
-            $table->increments('id');
+            $table->integer('snap_id')->unsigned()->index();
+            $table->integer('theme_id')->unsigned()->index();
+            $table->foreign('theme_id')->references('id')->on('themes')->onDelete('cascade');
+            $table->foreign('snap_id')->references('id')->on('snaps')->onDelete('cascade');
             $table->timestamps();
         });
     }

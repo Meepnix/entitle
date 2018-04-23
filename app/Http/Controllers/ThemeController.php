@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Theme;
-use App\Save;
+use App\Snap;
 use auth;
 
 
@@ -14,15 +14,15 @@ class ThemeController extends Controller
     public function show(Request $request)
     {
         $user = Auth::user();
-        $save = new Save();
+        $snap = new Snap();
 
-        $user->saves()->save($save);
+        $user->snaps()->save($snap);
 
         $themes = Theme::whereHas('triggers', function ($query) use ($request) {
             $query->whereIn('id', $request->triggers);
         })->get();
 
-        $save->themes()->attach($themes->id);
+        $snap->themes()->attach($themes->pluck('id')->all());
 
         return view('themes.show', compact('themes'));
     }
