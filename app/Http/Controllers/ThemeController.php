@@ -11,19 +11,10 @@ use auth;
 
 class ThemeController extends Controller
 {
-    public function show(Request $request)
+    public function show(Snap $snap)
     {
-        $user = Auth::user();
-        $snap = new Snap();
+      $themes = $snap->themes()->get();
 
-        $user->snaps()->save($snap);
-
-        $themes = Theme::whereHas('triggers', function ($query) use ($request) {
-            $query->whereIn('id', $request->triggers);
-        })->get();
-
-        $snap->themes()->attach($themes->pluck('id')->all());
-
-        return view('themes.show', compact('themes'));
+      return view('themes.show', compact('themes'));
     }
 }

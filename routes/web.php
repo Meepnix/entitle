@@ -38,7 +38,12 @@ Route::get('/stepc', function () {
 
 Route::get('/stepd', 'StepdController@show')->name('stepd.show');
 
-Route::get('/themes', 'ThemeController@show')->name('themes.show');
+/* Snap */
+Route::get('/themes/{snap}', 'ThemeController@show')->name('themes.show');
+Route::post('/snaps/store', 'SnapController@store')->name('snaps.store');
+
+
+
 Route::get('/themes/{theme}/options', 'OptionController@show')->name('options.show');
 
 
