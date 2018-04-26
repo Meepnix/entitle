@@ -28,9 +28,9 @@ class Theme extends Model
         return $this->belongsToMany('App\Trigger')->withTimestamps();
     }
 
-    public function saves()
+    public function snaps()
     {
-        return $this->belongsToMany('App\Save')->withTimestamps();
+        return $this->belongsToMany('App\Snap')->withTimestamps();
     }
 
     public function addTheme(Request $request)

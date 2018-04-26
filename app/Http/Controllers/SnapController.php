@@ -22,6 +22,6 @@ class SnapController extends Controller
 
       $snap->themes()->attach($themes->pluck('id')->all());
 
-      return redirect()->route('profile', [$snap]);
+      return redirect()->route('themes.show', [$snap]);
   }
 }

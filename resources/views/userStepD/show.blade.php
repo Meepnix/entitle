@@ -30,7 +30,7 @@
 
 
     </div>
-    <form method="GET" action="{{ route('themes.show') }}">
+    <form method="POST" action="{{ route('snaps.store') }}">
         {{ csrf_field() }}
         <div class="row">
             <div class="col">

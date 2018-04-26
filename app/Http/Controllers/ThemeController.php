@@ -13,8 +13,8 @@ class ThemeController extends Controller
 {
     public function show(Snap $snap)
     {
-      $themes = $snap->themes()->get();
+      $themes = $snap->themes;
 
-      return view('themes.show', compact('themes'));
+      return view('themes.show', compact('themes', 'snap'));
     }
 }

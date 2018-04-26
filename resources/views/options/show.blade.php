@@ -16,40 +16,62 @@
                 <div class="panel-body">
 
                     @foreach ($theme->options as $key => $option)
-                    <div id="accordion" role="tablist">
-                        <div class="card">
-                            <div class="card-header" role="tab" id="heading{{ $key }}">
-                                <h5 class="mb-0">
-                                    <a data-toggle="collapse" href="#collapse{{ $key }}" aria-expanded="true" aria-controls="collapse{{ $key }}">
-                                        {{ $option->title }}
-                                    </a>
-                                </h5>
-                            </div>
+                    <div class="card">
+                        <div class="card-header"
+                            {{ $option->title }}
+                        </div>
+                        <div class="card-body">
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form action="#" method="POST">
+                                            {{ csrf_field() }}
+                                            {{ method_field('POST') }}
 
-                            <div id="collapse{{ $key }}" class="collapse" role="tabpanel" aria-labelledby="heading{{ $key }}" data-parent="#accordion">
-                                <div class="card-body">
-                                    <h4>Advice</h4>
-                                    <p>{{ $option->advice }}</p>
-                                    <h4>AIC and local outcome codes</h4>
-                                    <p>{{ $option->aic }}</p>
-                                    <h4>Advice Guide Ref and Link</h4>
-                                    <p>{{ $option->refs }}</p>
-                                    <h4>Referral Tag</h4>
-                                    <p>{{ $option->tags }}</p>
-                                    <p>
-                                        
-                                        <label for="exampleCheck1">Mark for inclusion in client Maximization list</label>
-                                    </p>
-                                    <p>
-                                        <input type="checkbox" id="exampleCheck2">
-                                        <label for="exampleCheck2">Mark for inclusion in list of identified maximization (for worker’s use)</label>
-                                    </p>
+                                            <h4>Advice</h4>
+                                            <p>{{ $option->advice }}</p>
+                                            <h4>AIC and local outcome codes</h4>
+                                            <p>{{ $option->aic }}</p>
+                                            <h4>Advice Guide Ref and Link</h4>
+                                            <p>{{ $option->refs }}</p>
+                                            <h4>Referral Tag</h4>
+                                            <p>{{ $option->tags }}</p>
+                                            <p>
+                                                <input type="checkbox" id="exampleCheck2">
+                                                <label for="exampleCheck1">Mark for inclusion in client Maximization list</label>
+                                            </p>
+                                            <p>
+                                                <input type="checkbox" id="exampleCheck2">
+                                                <label for="exampleCheck2">Mark for inclusion in list of identified maximization (for worker’s use)</label>
+                                            </p>
 
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel
+                                            </button>
+                                            <button type="submit" class="btn btn-danger">Save
+                                            </button>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    @endforeach
+
                     </div>
+
+
+                </div>
+                    @endforeach
+
+                </div>
 
                     <span class="pull-left">
                         <a href="{{ route('themes.show') }}" class="btn btn-primary">

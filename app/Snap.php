@@ -17,4 +17,8 @@ class Snap extends Model
     {
         return $this->belongsToMany('App\Theme')->withTimestamps();
     }
+
+    public function options()
+    {
+        return $this->belongsToMany('App\Option')->withPivot('client', 'worker')->withTimestamps();
 }

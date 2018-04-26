@@ -19,4 +19,11 @@ class Option extends Model
     {
         return $this->belongsTo('App\Theme', 'theme_id');
     }
+
+    public function snaps()
+    {
+        return $this->belongsToMany('App\Snap')->withPivot('client', 'worker')->withTimestamps();
+    }
+
+
 }
