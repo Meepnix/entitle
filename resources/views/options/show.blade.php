@@ -17,7 +17,7 @@
 
                     @foreach ($theme->options as $key => $option)
                     <div class="card">
-                        <div class="card-header"
+                        <div class="card-header">
                             {{ $option->title }}
                         </div>
                         <div class="card-body">
@@ -34,6 +34,10 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
+                                        {{ $snoption->find($option->id) }}
+
+
+
                                         <form action="#" method="POST">
                                             {{ csrf_field() }}
                                             {{ method_field('POST') }}
@@ -74,9 +78,7 @@
                 </div>
 
                     <span class="pull-left">
-                        <a href="{{ route('themes.show') }}" class="btn btn-primary">
-                            <i class="fa fa-btn fa-arrow-circle-left"></i>Back
-                        </a>
+
                     </span>
 
                     @if (count($errors) > 0)

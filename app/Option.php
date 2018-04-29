@@ -25,5 +25,10 @@ class Option extends Model
         return $this->belongsToMany('App\Snap')->withPivot('client', 'worker')->withTimestamps();
     }
 
+    public function findOp()
+    {
+
+    }
+
 
 }

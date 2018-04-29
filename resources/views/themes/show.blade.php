@@ -18,7 +18,7 @@
                         <img class="card-img-top" src="{{ asset('img/test.png') }}" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">{{ $theme->title }}</h5>
-                            <a href="{{ route('options.show', [$theme->id]) }}" class="btn btn-primary">Max options</a>
+                            <a href="{{ route('options.show', [$snap->id, $theme->id]) }}" class="btn btn-primary">Max options</a>
                         </div>
                     </div>
 
