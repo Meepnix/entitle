@@ -46,8 +46,9 @@ Route::get('/snaps/{snap}/themes', 'ThemeController@show')->name('themes.show');
 
 
 /* Option*/
+Route::get('/snaps/{snap}/options/{option}/create', 'OptionController@create')->name('options.create');
 Route::get('/snaps/{snap}/themes/{theme}/options', 'OptionController@show')->name('options.show');
-Route::post('/options/store', 'OptionController@store')->name('options.store');
+Route::post('/snaps/{snap}/options/{option}/store', 'OptionController@store')->name('options.store');
 
 
 /* Admin */
