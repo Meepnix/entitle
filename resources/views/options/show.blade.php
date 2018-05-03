@@ -22,24 +22,17 @@
                         </div>
                         <div class="card-footer">
                             @if($snoption->find($option->id))
-
-
+                            <a href="{{ route('options.edit', [$snap, $option]) }}" class="btn btn-primary">Open
+                            </a>
                             @else
-                            <a href="{{ route('options.create', [$snap, $option]) }}" class="btn btn-primary">
-                                <i class="fa fa-btn fa-plus-square"></i>Open
+                            <a href="{{ route('options.create', [$snap, $option]) }}" class="btn btn-primary">Open
                             </a>
                             @endif
 
                         </div>
-
-
-
                     </div>
-
-
                 </div>
                     @endforeach
-
                 </div>
 
                     <span class="pull-left">

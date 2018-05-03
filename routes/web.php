@@ -49,6 +49,8 @@ Route::get('/snaps/{snap}/themes', 'ThemeController@show')->name('themes.show');
 Route::get('/snaps/{snap}/options/{option}/create', 'OptionController@create')->name('options.create');
 Route::get('/snaps/{snap}/themes/{theme}/options', 'OptionController@show')->name('options.show');
 Route::post('/snaps/{snap}/options/{option}/store', 'OptionController@store')->name('options.store');
+Route::get('/snaps/{snap}/options/{option}/edit', 'OptionController@edit')->name('options.edit');
+Route::patch('/snaps/{snap}/options/{option}/update', 'OptionController@update')->name('options.update');
 
 
 /* Admin */

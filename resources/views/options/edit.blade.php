@@ -15,9 +15,9 @@
                 </div>
 
                 <div class="panel-body">
-                    <form action="{{ route('options.store', [$snap, $option]) }}" method="POST">
+                    <form action="{{ route('options.update', [$snap, $option]) }}" method="POST">
                         {{ csrf_field() }}
-                        {{ method_field('POST') }}
+                        {{ method_field('PATCH') }}
 
                         <h4>Advice</h4>
                         <p>{{ $option->advice }}</p>
@@ -28,11 +28,11 @@
                         <h4>Referral Tag</h4>
                         <p>{{ $option->tags }}</p>
                         <p>
-                            {{ Form::checkbox('client', old('client'), false) }}
+                            {{ Form::checkbox('client', 1, $pvoption->pivot->client) }}
                             <label for="client">Mark for inclusion in client Maximization list</label>
                         </p>
                         <p>
-                            {{ Form::checkbox('worker', old('worker'), false) }}
+                            {{ Form::checkbox('worker', 1, $pvoption->pivot->worker) }}
                             <label for="worker">Mark for inclusion in list of identified maximization (for worker’s use)</label>
                         </p>
 
@@ -41,7 +41,7 @@
                         </button>
                     </form>
 
-                    <a href="{{ route('admin.themes.show') }}" class="btn btn-default">Back</a>
+                    <a href="{{ url()->previous() }}" class="btn btn-default">Back</a>
 
                     @if (count($errors) > 0)
                         <div class="alert alert-danger">

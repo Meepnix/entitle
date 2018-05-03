@@ -28,11 +28,11 @@
                         <h4>Referral Tag</h4>
                         <p>{{ $option->tags }}</p>
                         <p>
-                            {{ Form::checkbox('client', 1, old(client)) }}
+                            {{ Form::checkbox('client', 1, old('client')) }}
                             <label for="client">Mark for inclusion in client Maximization list</label>
                         </p>
                         <p>
-                            {{ Form::checkbox('worker', 1, old(worker)) }}
+                            {{ Form::checkbox('worker', 1, old('worker')) }}
                             <label for="worker">Mark for inclusion in list of identified maximization (for worker’s use)</label>
                         </p>
 
@@ -41,7 +41,7 @@
                         </button>
                     </form>
 
-                    <a href="{{ route('admin.themes.show') }}" class="btn btn-default">Back</a>
+                    <a href="{{ url()->previous() }}" class="btn btn-default">Back</a>
 
                     @if (count($errors) > 0)
                         <div class="alert alert-danger">

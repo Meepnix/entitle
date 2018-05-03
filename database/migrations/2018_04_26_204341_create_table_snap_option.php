@@ -18,8 +18,8 @@ class CreateTableSnapOption extends Migration
             $table->integer('option_id')->unsigned()->index();
             $table->foreign('option_id')->references('id')->on('options')->onDelete('cascade');
             $table->foreign('snap_id')->references('id')->on('snaps')->onDelete('cascade');
-            $table->boolean('client');
-            $table->boolean('worker');
+            $table->boolean('client')->nullable();
+            $table->boolean('worker')->nullable();
             $table->timestamps();
         });
     }
