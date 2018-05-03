@@ -24,4 +24,13 @@ class SnapController extends Controller
 
       return redirect()->route('themes.show', [$snap]);
   }
+
+  public function destroy(Request $requst, Snap $snap)
+  {
+      $snap->delete();
+
+      session()->flash('flash_message', 'Snapshot deleted');
+
+      return back();
+  }
 }

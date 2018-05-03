@@ -46,8 +46,32 @@
                         <a href="{{ route('admin.themes.show') }}">Admin Themes</a>
                     </li>
                     <li>
-                        <a href="{{ route('admin.triggers.show') }}">Admin Triggers</a>
+                        <a href="{{ route('admin.triggers.show') }}">Admin Filters</a>
                     </li>
+
+                        <h6 class="text-white font-weight-bold">SnapShots</h6>
+                        <div class="container">
+                        @foreach (Auth::user()->snaps as $snap)
+                            <div class="row">
+                                <div class="col-8">
+
+                                        <a class="h6 pull-left text-white" href="{{ route('themes.show', [$snap])}}">{{$snap->created_at}}</a>
+
+                                </div>
+                                <div class="col-4">
+                                    <form action="{{ route('snaps.delete', [$snap]) }}" method="POST">
+                                    {{ csrf_field() }}
+                                    {{ method_field('DELETE') }}
+                                        <button type="submit" class="btn btn-danger">x</button>
+                                    </form>
+                                </div>
+                            </div>
+                        @endforeach
+                        </div>
+
+
+
+
 
                 </ul>
             </div>

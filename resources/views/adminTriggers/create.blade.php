@@ -11,7 +11,7 @@
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h2>Triggers</h2>
+                    <h2>Filters</h2>
                 </div>
 
                 <div class="panel-body">
@@ -36,7 +36,7 @@
                         <button type="submit">Save</button>
 
                     </form>
-                    <a href="{{ route('admin.themes.show') }}" class="btn btn-default">Back</a>
+                    <a href="{{ route('admin.triggers.show') }}" class="btn btn-default">Back</a>
 
                     @if (count($errors) > 0)
                         <div class="alert alert-danger">

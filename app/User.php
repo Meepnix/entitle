@@ -28,6 +28,8 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    protected $with = ['snaps'];
+
 
     public function snaps()
     {

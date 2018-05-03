@@ -10,9 +10,9 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
-                <div class="panel-heading"><h2>Admin Triggers</h2></div>
+                <div class="panel-heading"><h2>Admin Filters</h2></div>
                     <a href="{{ route('admin.triggers.create') }}" class="btn btn-primary">
-                        <i class="fa fa-btn fa-plus-square"></i>Create Trigger
+                        <i class="fa fa-btn fa-plus-square"></i>Create Filter
                     </a>
                 <div class="panel-body">
 

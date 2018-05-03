@@ -40,6 +40,8 @@ Route::get('/stepd', 'StepdController@show')->name('stepd.show');
 
 /* Snap */
 Route::post('/snaps/store', 'SnapController@store')->name('snaps.store');
+Route::delete('/snaps/{snap}', 'SnapController@destroy')->name('snaps.delete');
+
 
 /* Theme */
 Route::get('/snaps/{snap}/themes', 'ThemeController@show')->name('themes.show');
