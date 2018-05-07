@@ -32,6 +32,9 @@
                                 </h5>
 
                             </div>
+                            <div class="card-body">
+                                <a href="{{ route('admin.triggers.edit', [$trigger]) }}" class="btn btn-primary">Edit</a>
+                            </div>
 
                         </div>
                     @endforeach

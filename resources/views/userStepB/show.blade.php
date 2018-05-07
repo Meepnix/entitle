@@ -22,27 +22,57 @@
                         <input type="checkbox" id="Check1" v-model="stat1">
                         <label for="Check1">Has Mental Health or "stress" issue</label>
                     </p>
-
-                    <input type="checkbox" id="Check2" v-model="stat2">
-                    <label for="Check2">Learning Disabilites</label>
+                    <p>
+                        <input type="checkbox" id="Check2" v-model="stat2">
+                        <label for="Check2">Learning Disabilites</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="Check3" v-model="stat3">
+                        <label for="Check3">Cognitive difficulties</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="Check4" v-model="stat4">
+                        <label for="Check4">Evidence of problems pursing entitlement (e.g. history of failed claim, reading/writing problems) - agree with Session Supervisor before referral on this ground</label>
+                    </p>
                 </div>
                 <div class="col">
                     <h3>COMPLEXITY</h3>
                     <p>Where the issue being presented concerns:</p>
+
                     <p>
-                        <input type="checkbox" id="Check3" v-model="stat3">
-                        <label for="Check3">Cohabitation cases</label>
+                        <input type="checkbox" id="Check5" v-model="stat5">
+                        <label for="Check5">Cohabitation cases</label>
                     </p>
 
+                    <p>
+                        <input type="checkbox" id="Check6" v-model="stat6">
+                        <label for="Check6">Where benefit ceases due to failure to attend an assessment or medical</label>
                     </p>
-                        <input type="checkbox" id="Check4" v-model="stat4">
-                        <label for="Check4">Where benefit ceases due to failure to attend an assessment or medical</label>
+
+                    <p>
+                        <input type="checkbox" id="Check7" v-model="stat7">
+                        <label for="Check7">Clients who present with sanctions problems</label>
+                    </p>
+
+                    <p>
+                        <input type="checkbox" id="Check8" v-model="stat8">
+                        <label for="Check8">Clients who present with sanctions problems</label>
+                    </p>
+
+                    <p>
+                        <input type="checkbox" id="Check9" v-model="stat9">
+                        <label for="Check9">Multiple linked benefits matters - agree with Session Supervisor before referral on this ground</label>
+                    </p>
+
+                    <p>
+                        <input type="checkbox" id="Check10" v-model="stat10">
+                        <label for="Check10">Overpayment cases should be referred to the debt team in the first instance</label>
                     </p>
 
 
                 </div>
             </div>
-            <div v-if="stat1 || stat2 || stat3 || stat4" class="alert alert-danger" role="alert">
+            <div v-if="stat1 || stat2 || stat3 || stat4 || stat5 || stat6 || stat7 || stat8 || stat9 || stat10" class="alert alert-danger" role="alert">
                 <p>Consider if referral can be made, otherwise skip referral step.</p>
                 <a href="{{ route('stepd.show') }}" class="btn btn-primary">
                     Skip referral <i class="fa fa-btn fa-arrow-circle-right"></i>
@@ -84,6 +114,12 @@
                 stat2: false,
                 stat3: false,
                 stat4: false,
+                stat5: false,
+                stat6: false,
+                stat7: false,
+                stat8: false,
+                stat9: false,
+                stat10: false,
             }
         })
 

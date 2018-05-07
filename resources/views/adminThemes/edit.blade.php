@@ -11,32 +11,39 @@
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h1>Options</h1>
+                    <h2>Themes</h2>
                 </div>
 
                 <div class="panel-body">
 
 
-                    <h3>Create Option</h3>
+                    <h3>Edit Theme</h3>
 
-                    <form method="POST" action="{{ route('admin.options.store', [$theme->id]) }}">
+                    <form method="POST" action="{{ route('admin.themes.update', [$theme]) }}">
                         {{ csrf_field() }}
+                        {{ method_field('PATCH') }}
                         <div class="form-group">
                             <label for="title1">Title</label>
-                            <input type="text" class="form-control" id="title1" name="title" value="{{ old('title') }}"><br>
+                            <input type="text" class="form-control" id="title1" name="title" value="{{ $theme->title }}"><br>
                         </div>
                         <div class="form-group">
-                            <label for="advice1">Advice</label>
-                            <textarea class="form-control" id="advice1" name="advice" rows="3" value="{{ old('advice') }}"></textarea><br>
+                            <label for="scope1">Scope</label>
+                            <textarea class="form-control" id="scope1" name="scope" rows="3" value="{{ $theme->scope }}">{{ $theme->scope }}</textarea><br>
                         </div>
                         <div class="form-group">
-                            <label for="aic1">AIC</label>
-                            <textarea class="form-control" id="aic1" name="aic" rows="3" value="{{ old('aic') }}"></textarea><br>
+                            <label for="img1">Image</label>
+                            <input class="form-control" id="img1" type="text" name="img_link" value="{{ $theme->img_link }}" placeholder="\img\test.png"><br>
                         </div>
                         <div class="form-group">
-                            <label for="aic1">Local Outcomes</label>
-                            <textarea class="form-control" id="outcome1" name="outcome" rows="3" value="{{ old('outcome') }}"></textarea><br>
+                            {!! Form::label('triggers', 'Triggers CRF:') !!}
+                            {!! Form::select('triggers[]', $triggersCRF, $resultsCRF, ['class' => 'form-control', 'multiple']) !!}
                         </div>
+
+                        <div class="form-group">
+                            {!! Form::label('triggers', 'Triggers YRBC:') !!}
+                            {!! Form::select('triggers[]', $triggersYRBC, $resultsYRBC, ['class' => 'form-control', 'multiple']) !!}
+                        </div>
+
                         <button type="submit">Save</button>
 
                     </form>

@@ -17,10 +17,9 @@ class CreateOptionsTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->string('title');
-            $table->mediumText('advice');
-            $table->text('aic');
-            $table->text('refs');
-            $table->text('tags');
+            $table->mediumText('advice')->nullable();
+            $table->string('aic')->nullable();
+            $table->string('outcome')->nullable();
             $table->integer('theme_id')->unsigned();
 
             $table->foreign('theme_id')

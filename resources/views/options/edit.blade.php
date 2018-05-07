@@ -23,10 +23,8 @@
                         <p>{{ $option->advice }}</p>
                         <h4>AIC and local outcome codes</h4>
                         <p>{{ $option->aic }}</p>
-                        <h4>Advice Guide Ref and Link</h4>
-                        <p>{{ $option->refs }}</p>
-                        <h4>Referral Tag</h4>
-                        <p>{{ $option->tags }}</p>
+                        <h4>Local Outcomes</h4>
+                        <p>{{ $option->outcome }}</p>
                         <p>
                             {{ Form::checkbox('client', 1, $pvoption->pivot->client) }}
                             <label for="client">Mark for inclusion in client Maximization list</label>

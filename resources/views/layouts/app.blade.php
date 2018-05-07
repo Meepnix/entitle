@@ -33,7 +33,7 @@
 
 </head>
 <body>
-    <body>
+    
         <div id="wrapper">
 
            <!-- Sidebar -->

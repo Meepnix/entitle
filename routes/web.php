@@ -47,6 +47,7 @@ Route::delete('/snaps/{snap}', 'SnapController@destroy')->name('snaps.delete');
 Route::get('/snaps/{snap}/themes', 'ThemeController@show')->name('themes.show');
 
 
+
 /* Option*/
 Route::get('/snaps/{snap}/options/{option}/create', 'OptionController@create')->name('options.create');
 Route::get('/snaps/{snap}/themes/{theme}/options', 'OptionController@show')->name('options.show');
@@ -56,13 +57,20 @@ Route::patch('/snaps/{snap}/options/{option}/update', 'OptionController@update')
 
 
 /* Admin */
+/* Triggers */
 Route::get('/admin/triggers', 'AdminTriggersController@show')->name('admin.triggers.show');
 Route::get('/admin/triggers/create', 'AdminTriggersController@create')->name('admin.triggers.create');
 Route::post('/admin/triggers/store', 'AdminTriggersController@store')->name('admin.triggers.store');
+Route::get('/admin/triggers/{trigger}/edit', 'AdminTriggersController@edit')->name('admin.triggers.edit');
+Route::patch('/admin/triggers/{trigger}/update', 'AdminTriggersController@update')->name('admin.triggers.update');
 
+/* Theme */
 Route::get('/admin/themes', 'AdminThemesController@show')->name('admin.themes.show');
 Route::get('/admin/themes/create', 'AdminThemesController@create')->name('admin.themes.create');
 Route::post('/admin/themes/store', 'AdminThemesController@store')->name('admin.themes.store');
+Route::get('/admin/themes/{theme}/edit', 'AdminThemesController@edit')->name('admin.themes.edit');
+Route::patch('/admin/themes/{theme}/update', 'AdminThemesController@update')->name('admin.themes.update');
 
+/* Opition */
 Route::get('/admin/themes/{theme}/options/create', 'AdminOptionsController@create')->name('admin.options.create');
 Route::post('/admin/themes/{theme}/options/store', 'AdminOptionsController@store')->name('admin.options.store');

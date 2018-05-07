@@ -31,4 +31,18 @@ class AdminTriggersController extends Controller
 
         return redirect()->route('admin.triggers.show')->with('flash_message', 'Trigger created');
     }
+
+    public function edit(Trigger $trigger)
+    {
+        return view('adminTriggers.edit', compact('trigger'));
+
+    }
+
+    public function update(Request $request, Trigger $trigger)
+    {
+        $trigger->update($request->all());
+
+        return redirect()->route('admin.triggers.show')->with('flash message', 'Filter updated');
+
+    }
 }

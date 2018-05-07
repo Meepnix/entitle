@@ -23,6 +23,7 @@
                                 <h5 class="mb-0">
                                     <a data-toggle="collapse" href="#collapse{{ $key }}" aria-expanded="true" aria-controls="collapse{{ $key }}">
                                         {{ $theme->title }}
+                                        <a href="{{ route('admin.themes.edit', [$theme->id]) }}" class="btn btn-primary">Edit</a>
                                     </a>
                                 </h5>
                                 <span class="pull-right">
