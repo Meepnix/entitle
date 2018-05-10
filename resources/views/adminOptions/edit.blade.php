@@ -21,25 +21,30 @@
 
                     <form method="POST" action="{{ route('admin.options.update', [$option->id]) }}">
                         {{ csrf_field() }}
-                        {{ method_field('DELETE') }}
+                        {{ method_field('PATCH') }}
                         <div class="form-group">
                             <label for="title1">Title</label>
-                            <input type="text" class="form-control" id="title1" name="title" value="{{ $option->title) }}"><br>
+                            <input type="text" class="form-control" id="title1" name="title" value="{{ $option->title }}"><br>
                         </div>
                         <div class="form-group">
                             <label for="advice1">Advice</label>
-                            <textarea class="form-control" id="advice1" name="advice" rows="3" value="{{ $option->advice }}"></textarea><br>
+                            <textarea class="form-control" id="advice1" name="advice" rows="3" value="{{ $option->advice }}">{{ $option->advice }}</textarea><br>
                         </div>
                         <div class="form-group">
                             <label for="aic1">AIC</label>
-                            <textarea class="form-control" id="aic1" name="aic" rows="3" value="{{ $option->aic }}"></textarea><br>
+                            <textarea class="form-control" id="aic1" name="aic" rows="3" value="{{ $option->aic }}">{{ $option->aic }}</textarea><br>
                         </div>
+                        <a href="{{ route('admin.links.create', [$option]) }}" class="btn btn-primary">
+                            <i class="fa fa-btn fa-plus-square"></i>Add link
+                        </a>
 
                         @foreach ($option->links as $link)
                         <div class="card" style="width: 18rem;">
                             <div class="card-body">
                                 <h5 class="card-title">{{ $link->title }}</h5>
-                                <a href="{{ $link->title }}" class="card-link">{{ $link->title }}</a>
+                                <a href="{{ $link->link }}" class="card-link">{{ $link->link }}</a>
+                                <a href="{{ route('admin.links.edit', [$option, $link]) }}" class="btn btn-primary">Edit
+                                </a>
                             </div>
                         </div>
                         @endforeach

@@ -71,9 +71,11 @@ Route::patch('/admin/themes/{theme}/update', 'AdminThemesController@update')->na
 /* Option */
 Route::get('/admin/themes/{theme}/options/create', 'AdminOptionsController@create')->name('admin.options.create');
 Route::post('/admin/themes/{theme}/options/store', 'AdminOptionsController@store')->name('admin.options.store');
+Route::get('/admin/options/{option}/edit', 'AdminOptionsController@edit')->name('admin.options.edit');
+Route::patch('/admin/options/{option}/update', 'AdminOptionsController@update')->name('admin.options.update');
 
 /* Link */
 Route::get('/admin/options/{option}/links/create', 'AdminLinksController@create')->name('admin.links.create');
-Route::get('/admin/options/{option}/links/store', 'AdminLinksController@store')->name('admin.links.store');
-Route::get('/admin/links/{link}/edit', 'AdminLinksController@edit')->name('admin.links.edit');
-Route::get('/admin/links/{link}/update', 'AdminkLinksController@update')->name('admin.links.update');
+Route::post('/admin/options/{option}/links/store', 'AdminLinksController@store')->name('admin.links.store');
+Route::get('/admin/options/{option}/links/{link}/edit', 'AdminLinksController@edit')->name('admin.links.edit');
+Route::patch('/admin/links/{link}/update', 'AdminLinksController@update')->name('admin.links.update');

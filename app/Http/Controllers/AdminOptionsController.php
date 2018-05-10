@@ -13,7 +13,6 @@ class AdminOptionsController extends Controller
         $this->middleware('auth');
     }
 
-
     public function create(Theme $theme)
     {
         return view('adminOptions.create', compact('theme'));
@@ -27,7 +26,7 @@ class AdminOptionsController extends Controller
 
     public function edit(Option $option)
     {
-        return view('admin.Options.edit', compact('option'));
+        return view('adminOptions.edit', compact('option'));
     }
 
     public function update(Request $request, Option $option)

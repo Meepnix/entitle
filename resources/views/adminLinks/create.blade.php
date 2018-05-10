@@ -11,42 +11,29 @@
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h1>Options</h1>
+                    <h1>Links</h1>
                 </div>
 
                 <div class="panel-body">
 
 
-                    <h3>Edit Option</h3>
+                    <h3>Create Link</h3>
 
-                    <form method="POST" action="{{ route('admin.options.update', [$option->id]) }}">
+                    <form method="POST" action="{{ route('admin.links.store', [$option]) }}">
                         {{ csrf_field() }}
-                        {{ method_field('DELETE') }}
                         <div class="form-group">
                             <label for="title1">Title</label>
-                            <input type="text" class="form-control" id="title1" name="title" value="{{ $option->title) }}"><br>
+                            <input type="text" class="form-control" id="title1" name="title" value="{{ old('title') }}"><br>
                         </div>
                         <div class="form-group">
-                            <label for="advice1">Advice</label>
-                            <textarea class="form-control" id="advice1" name="advice" rows="3" value="{{ $option->advice }}"></textarea><br>
-                        </div>
-                        <div class="form-group">
-                            <label for="refs1">Advice Guide Ref and Link</label>
-                            <textarea class="form-control" id="refs1" name="refs" rows="3" value="{{ $option->refs }}"></textarea><br>
-                        </div>
-                        <div class="form-group">
-                            <label for="aic1">AIC and local outcome codes</label>
-                            <textarea class="form-control" id="aic1" name="aic" rows="3" value="{{ $option->aic }}"></textarea><br>
-                        </div>
-                        <div class="form-group">
-                            <label for="refs1">Referral Tag</label>
-                            <textarea class="form-control" id="refs1" name="tags" rows="3" value="{{ $option->tags }}"></textarea><br>
+                            <label for="link1">Link</label>
+                            <input type="text" class="form-control" id="link1" name="link" value="{{ old('link') }}"><br>
                         </div>
 
                         <button type="submit">Save</button>
 
                     </form>
-                    <a href="{{ route('admin.themes.show') }}" class="btn btn-default">Back</a>
+                    <a href="{{ route('admin.options.edit', [$option]) }}" class="btn btn-default">Back</a>
 
                     @if (count($errors) > 0)
                         <div class="alert alert-danger">

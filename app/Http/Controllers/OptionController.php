@@ -41,7 +41,7 @@ class OptionController extends Controller
         ["worker" => $request->input('worker'), "client" => $request->input('client')]);
 
         $theme = $option->themes;
-        
+
         return redirect()->route('options.show', [$snap, $theme ])
         ->with('flash_message', 'Option Saved');
     }

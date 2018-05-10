@@ -18,6 +18,8 @@ class CreateLinksTable extends Migration
             $table->timestamps();
             $table->string('title')->nullable();
             $table->string('link');
+            $table->integer('option_id')->unsigned()->index();
+            $table->foreign('option_id')->references('id')->on('options')->onDelete('cascade');
         });
     }
 

@@ -21,7 +21,7 @@
 
                         <h4>Advice</h4>
                         <p>{{ $option->advice }}</p>
-                        <h4>AIC and local outcome codes</h4>
+                        <h4>AIC</h4>
                         <p>{{ $option->aic }}</p>
                         <h4>Local Outcomes</h4>
                         <p>{{ $option->outcome }}</p>

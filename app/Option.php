@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
 use App\Theme;
 
 class Option extends Model
@@ -11,8 +12,7 @@ class Option extends Model
         'title',
         'advice',
         'aic',
-        'refs',
-        'tags',
+        'outcome',
     ];
 
     public function links()
@@ -41,6 +41,10 @@ class Option extends Model
         }
 
     }
+    public function addLink(Request $request)
+    {
+        return $this->links()->create($request->all());
 
+    }
 
 }
