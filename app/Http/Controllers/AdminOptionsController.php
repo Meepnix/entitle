@@ -24,4 +24,16 @@ class AdminOptionsController extends Controller
         $theme->addOption($request);
         return redirect()->route('admin.themes.show')->with('flash_message', 'New option created');
     }
+
+    public function edit(Option $option)
+    {
+        return view('admin.Options.edit', compact('option'));
+    }
+
+    public function update(Request $request, Option $option)
+    {
+        $option->update($request->all());
+        return redirect()->route('admin.themes.show')->with('flash_message', 'Option updated');
+
+    }
 }

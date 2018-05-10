@@ -38,7 +38,8 @@
                                     @foreach ($theme->options as $option)
                                     <li class="list-group-item clearfix">
                                         {{ $option->title }}
-
+                                        <a href="{{ route('admin.options.edit', [$option]) }}" class="btn btn-primary">Edit
+                                        </a>
                                     </li>
                                     @endforeach
                                 </div>

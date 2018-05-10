@@ -31,16 +31,23 @@
                             <textarea class="form-control" id="advice1" name="advice" rows="3" value="{{ $option->advice }}"></textarea><br>
                         </div>
                         <div class="form-group">
-                            <label for="refs1">Advice Guide Ref and Link</label>
-                            <textarea class="form-control" id="refs1" name="refs" rows="3" value="{{ $option->refs }}"></textarea><br>
-                        </div>
-                        <div class="form-group">
-                            <label for="aic1">AIC and local outcome codes</label>
+                            <label for="aic1">AIC</label>
                             <textarea class="form-control" id="aic1" name="aic" rows="3" value="{{ $option->aic }}"></textarea><br>
                         </div>
+
+                        @foreach ($option->links as $link)
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ $link->title }}</h5>
+                                <a href="{{ $link->title }}" class="card-link">{{ $link->title }}</a>
+                            </div>
+                        </div>
+                        @endforeach
+
+
                         <div class="form-group">
-                            <label for="refs1">Referral Tag</label>
-                            <textarea class="form-control" id="refs1" name="tags" rows="3" value="{{ $option->tags }}"></textarea><br>
+                            <label for="outcome1">Local Outcomes</label>
+                            <textarea class="form-control" id="outcome1" name="outcome" rows="3" value="{{ $option->outcome }}"></textarea><br>
                         </div>
 
                         <button type="submit">Save</button>

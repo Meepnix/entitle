@@ -15,6 +15,11 @@ class Option extends Model
         'tags',
     ];
 
+    public function links()
+    {
+        return $this->hasMany('App\Link');
+    }
+
     public function themes()
     {
         return $this->belongsTo('App\Theme', 'theme_id');
@@ -34,7 +39,7 @@ class Option extends Model
         } else {
             return(false);
         }
-        
+
     }
 
 
