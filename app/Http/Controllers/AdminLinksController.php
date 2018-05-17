@@ -34,4 +34,14 @@ class AdminLinksController extends Controller
         return redirect()->route('admin.options.edit', [$link->options->id])->with('flash_message', 'Link updated');
 
     }
+
+    public function destroy(Request $request, Link $link)
+    {
+        $link->delete();
+
+        session()->flash('flash_message', 'Link deleted');
+
+        return back();
+
+    }
 }

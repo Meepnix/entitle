@@ -25,7 +25,7 @@ class SnapController extends Controller
       return redirect()->route('themes.show', [$snap]);
   }
 
-  public function destroy(Request $requst, Snap $snap)
+  public function destroy(Request $request, Snap $snap)
   {
       $snap->delete();
 

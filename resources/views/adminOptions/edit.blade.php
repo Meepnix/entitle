@@ -34,21 +34,6 @@
                             <label for="aic1">AIC</label>
                             <textarea class="form-control" id="aic1" name="aic" rows="3" value="{{ $option->aic }}">{{ $option->aic }}</textarea><br>
                         </div>
-                        <a href="{{ route('admin.links.create', [$option]) }}" class="btn btn-primary">
-                            <i class="fa fa-btn fa-plus-square"></i>Add link
-                        </a>
-
-                        @foreach ($option->links as $link)
-                        <div class="card" style="width: 18rem;">
-                            <div class="card-body">
-                                <h5 class="card-title">{{ $link->title }}</h5>
-                                <a href="{{ $link->link }}" class="card-link">{{ $link->link }}</a>
-                                <a href="{{ route('admin.links.edit', [$option, $link]) }}" class="btn btn-primary">Edit
-                                </a>
-                            </div>
-                        </div>
-                        @endforeach
-
 
                         <div class="form-group">
                             <label for="outcome1">Local Outcomes</label>
@@ -58,6 +43,28 @@
                         <button type="submit">Save</button>
 
                     </form>
+                    <p></p>
+                    <a href="{{ route('admin.links.create', [$option]) }}" class="btn btn-primary">
+                        <i class="fa fa-btn fa-plus-square"></i>Add link
+                    </a>
+                    @foreach ($option->links as $link)
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $link->title }}</h5>
+                            <a href="{{ $link->link }}" class="card-link">{{ $link->link }}</a>
+                            <a href="{{ route('admin.links.edit', [$option, $link]) }}" class="btn btn-primary">Edit
+                            </a>
+                            <form method="POST" action="{{ route('admin.links.delete', [$link->id]) }}">
+                                {{ csrf_field() }}
+                                {{ method_field('DELETE') }}
+                                <button type="submit" class="btn btn-danger">x</button>
+                            </form>
+                        </div>
+                    </div>
+                    @endforeach
+
+
+
                     <a href="{{ route('admin.themes.show') }}" class="btn btn-default">Back</a>
 
                     @if (count($errors) > 0)

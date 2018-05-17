@@ -79,3 +79,4 @@ Route::get('/admin/options/{option}/links/create', 'AdminLinksController@create'
 Route::post('/admin/options/{option}/links/store', 'AdminLinksController@store')->name('admin.links.store');
 Route::get('/admin/options/{option}/links/{link}/edit', 'AdminLinksController@edit')->name('admin.links.edit');
 Route::patch('/admin/links/{link}/update', 'AdminLinksController@update')->name('admin.links.update');
+Route::delete('/admin/links/{link}', 'AdminLinksController@destroy')->name('admin.links.delete');
