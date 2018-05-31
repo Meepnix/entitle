@@ -24,6 +24,11 @@
                                     <a data-toggle="collapse" href="#collapse{{ $key }}" aria-expanded="true" aria-controls="collapse{{ $key }}">
                                         {{ $theme->title }}
                                         <a href="{{ route('admin.themes.edit', [$theme->id]) }}" class="btn btn-primary">Edit</a>
+                                        <form method="POST" action="{{ route('admin.themes.delete', [$theme->id]) }}">
+                                            {{ csrf_field() }}
+                                            {{ method_field('DELETE') }}
+                                            <button type="submit" class="btn btn-danger">x</button>
+                                        </form>
                                     </a>
                                 </h5>
                                 <span class="pull-right">
@@ -40,6 +45,11 @@
                                         {{ $option->title }}
                                         <a href="{{ route('admin.options.edit', [$option]) }}" class="btn btn-primary">Edit
                                         </a>
+                                        <form method="POST" action="{{ route('admin.options.delete', [$option->id]) }}">
+                                            {{ csrf_field() }}
+                                            {{ method_field('DELETE') }}
+                                            <button type="submit" class="btn btn-danger">x</button>
+                                        </form>
                                     </li>
                                     @endforeach
                                 </div>

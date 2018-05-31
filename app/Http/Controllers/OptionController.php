@@ -46,9 +46,6 @@ class OptionController extends Controller
         ->with('flash_message', 'Option Saved');
     }
 
-
-
-
     public function create(Snap $snap, Option $option)
     {
         return view('options.create', compact('snap', 'option'));

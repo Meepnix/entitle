@@ -57,4 +57,14 @@ class AdminThemesController extends Controller
         return redirect()->route('admin.themes.show')->with('flash_message', 'Theme created');
     }
 
+    public function destroy(Request $request, Theme $theme)
+    {
+        $theme->delete();
+
+        session()->flash('flash_message', 'Option deleted');
+
+        return back();
+
+    }
+
 }

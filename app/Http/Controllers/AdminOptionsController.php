@@ -35,4 +35,14 @@ class AdminOptionsController extends Controller
         return redirect()->route('admin.themes.show')->with('flash_message', 'Option updated');
 
     }
+
+    public function destroy(Request $request, Option $option)
+    {
+        $option->delete();
+
+        session()->flash('flash_message', 'Option deleted');
+
+        return back();
+
+    }
 }

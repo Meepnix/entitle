@@ -67,12 +67,15 @@ Route::get('/admin/themes/create', 'AdminThemesController@create')->name('admin.
 Route::post('/admin/themes/store', 'AdminThemesController@store')->name('admin.themes.store');
 Route::get('/admin/themes/{theme}/edit', 'AdminThemesController@edit')->name('admin.themes.edit');
 Route::patch('/admin/themes/{theme}/update', 'AdminThemesController@update')->name('admin.themes.update');
+Route::delete('/admin/themes/{theme}', 'AdminThemesController@destroy')->name('admin.themes.delete');
 
 /* Option */
 Route::get('/admin/themes/{theme}/options/create', 'AdminOptionsController@create')->name('admin.options.create');
 Route::post('/admin/themes/{theme}/options/store', 'AdminOptionsController@store')->name('admin.options.store');
 Route::get('/admin/options/{option}/edit', 'AdminOptionsController@edit')->name('admin.options.edit');
 Route::patch('/admin/options/{option}/update', 'AdminOptionsController@update')->name('admin.options.update');
+Route::delete('/admin/options/{option}', 'AdminOptionsController@destroy')->name('admin.options.delete');
+
 
 /* Link */
 Route::get('/admin/options/{option}/links/create', 'AdminLinksController@create')->name('admin.links.create');
