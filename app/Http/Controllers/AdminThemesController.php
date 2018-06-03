@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Http\Request;
 use App\Theme;
 use App\Trigger;
@@ -15,12 +16,20 @@ class AdminThemesController extends Controller
 
     public function show()
     {
+        if (Gate::denies('admin-access', User::class)) {
+            return 'Access denied';
+        }
+
         $themes = Theme::all();
         return view('adminThemes.show', compact('themes'));
     }
 
     public function create()
     {
+        if (Gate::denies('admin-access', User::class)) {
+            return 'Access denied';
+        }
+
         $triggersCRF = Trigger::where('type', 'CRF')->pluck('trigger', 'id');
         $triggersYRBC = Trigger::where('type', 'YRBC')->pluck('trigger', 'id');
         return view('adminThemes.create', compact('triggersCRF', 'triggersYRBC'));
@@ -28,6 +37,11 @@ class AdminThemesController extends Controller
 
     public function edit(Theme $theme)
     {
+        if (Gate::denies('admin-access', User::class)) {
+            return 'Access denied';
+        }
+
+
         $triggersCRF = Trigger::where('type', 'CRF')->pluck('trigger', 'id');
         $triggersYRBC = Trigger::where('type', 'YRBC')->pluck('trigger', 'id');
         $resultsCRF = $theme->triggers->where('type', 'CRF')->pluck('id');
@@ -39,6 +53,16 @@ class AdminThemesController extends Controller
 
     public function update(Request $request, Theme $theme)
     {
+        if (Gate::denies('admin-access', User::class)) {
+            return 'Access denied';
+        }
+
+        $request->validate([
+            'title' => 'required|max:191',
+            'img_link' => 'max:191',
+            'scope' => 'max:65535',
+        ]);
+
         $theme->update($request->all());
         $theme->triggers()->sync($request->input('triggers'));
 
@@ -48,6 +72,17 @@ class AdminThemesController extends Controller
 
     public function store(Request $request)
     {
+        if (Gate::denies('admin-access', User::class)) {
+            return 'Access denied';
+        }
+
+        $request->validate([
+            'title' => 'required|max:191',
+            'img_link' => 'max:191',
+            'scope' => 'max:65535',
+        ]);
+
+
         $new = new Theme();
 
         $theme = $new->addTheme($request);
@@ -59,6 +94,10 @@ class AdminThemesController extends Controller
 
     public function destroy(Request $request, Theme $theme)
     {
+        if (Gate::denies('admin-access', User::class)) {
+            return 'Access denied';
+        }
+
         $theme->delete();
 
         session()->flash('flash_message', 'Option deleted');

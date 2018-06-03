@@ -26,16 +26,16 @@
                                     </a>
                                     <span class="pull-right">
 
-                                    <a href="{{ route('admin.themes.edit', [$theme->id]) }}" class="btn btn-secondary">
-                                        <i class="fa fa-btn fa-pencil" aria-hidden="true"></i>Edit
-                                    </a>
-                                    <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#deleteTheme{{ $theme-> id }}">
-                                        <i class="fa fa-btn fa-trash" aria-hidden="true"></i>Delete
-                                    </a>
-                                </span>
+                                        <a href="{{ route('admin.themes.edit', [$theme->id]) }}" class="btn btn-secondary">
+                                            <i class="fa fa-btn fa-pencil" aria-hidden="true"></i>Edit
+                                        </a>
+                                        <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#deleteTheme{{ $theme->id }}">
+                                            <i class="fa fa-btn fa-trash" aria-hidden="true"></i>Delete
+                                        </a>
+                                    </span>
 
                                 <!-- Modal -->
-                                <div class="modal fade" id="deleteTheme{{ $theme-> id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal fade" id="deleteTheme{{ $theme->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
