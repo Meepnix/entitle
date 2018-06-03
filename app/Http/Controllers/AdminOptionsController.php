@@ -29,6 +29,14 @@ class AdminOptionsController extends Controller
             return 'Access denied';
         }
 
+        $request->validate([
+            'title' => 'required|max:191',
+            'advice' => 'max:191',
+            'aic' => 'max:191',
+            'advice' => 'max:65535',
+            'outcome' => 'max:191',
+        ]);
+
         $theme->addOption($request);
         return redirect()->route('admin.themes.show')->with('flash_message', 'New option created');
     }
@@ -47,6 +55,14 @@ class AdminOptionsController extends Controller
         if (Gate::denies('admin-access', User::class)) {
             return 'Access denied';
         }
+
+        $request->validate([
+            'title' => 'required|max:191',
+            'advice' => 'max:191',
+            'aic' => 'max:191',
+            'advice' => 'max:65535',
+            'outcome' => 'max:191',
+        ]);
 
         $option->update($request->all());
         return redirect()->route('admin.themes.show')->with('flash_message', 'Option updated');

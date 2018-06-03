@@ -40,7 +40,12 @@ class AdminLinksController extends Controller
         if (Gate::denies('admin-access', User::class)) {
             return 'Access denied';
         }
-        
+
+        $request->validate([
+            'title' => 'required|max:191',
+            'link' => 'max:191',
+        ]);
+
         $new = new Link();
         $new = $option->addLink($request);
         return redirect()->route('admin.options.edit', [$option])->with('flash_message', 'Link created');
@@ -52,6 +57,13 @@ class AdminLinksController extends Controller
         if (Gate::denies('admin-access', User::class)) {
             return 'Access denied';
         }
+
+        $request->validate([
+            'title' => 'required|max:191',
+            'link' => 'max:191',
+        ]);
+
+        
 
         $link->update($request->all());
         return redirect()->route('admin.options.edit', [$link->options->id])->with('flash_message', 'Link updated');

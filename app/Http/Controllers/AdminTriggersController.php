@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Http\Request;
+use App\Http\Requests\AdminTriggers;
 use App\Trigger;
 
 class AdminTriggersController extends Controller
@@ -32,11 +33,12 @@ class AdminTriggersController extends Controller
         return view('adminTriggers.create');
     }
 
-    public function store(Request $request)
+    public function store(AdminTriggers $request)
     {
         if (Gate::denies('admin-access', User::class)) {
             return 'Access denied';
         }
+
 
         $new = new Trigger();
 
@@ -55,15 +57,32 @@ class AdminTriggersController extends Controller
 
     }
 
-    public function update(Request $request, Trigger $trigger)
+    public function update(Request $request, AdminTriggers $trigger)
     {
         if (Gate::denies('admin-access', User::class)) {
             return 'Access denied';
         }
-        
+
+
+
         $trigger->update($request->all());
 
         return redirect()->route('admin.triggers.show')->with('flash message', 'Filter updated');
 
     }
+
+    public function destroy(Request $request, Trigger $trigger)
+    {
+        if (Gate::denies('admin-access', User::class)) {
+            return 'Access denied';
+        }
+
+        $trigger->delete();
+
+        session()->flash('flash_message', 'Trigger deleted');
+
+        return back();
+
+    }
+
 }

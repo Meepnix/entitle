@@ -60,6 +60,9 @@ Route::get('/admin/triggers/create', 'AdminTriggersController@create')->name('ad
 Route::post('/admin/triggers/store', 'AdminTriggersController@store')->name('admin.triggers.store');
 Route::get('/admin/triggers/{trigger}/edit', 'AdminTriggersController@edit')->name('admin.triggers.edit');
 Route::patch('/admin/triggers/{trigger}/update', 'AdminTriggersController@update')->name('admin.triggers.update');
+Route::delete('/admin/triggers/{trigger}', 'AdminTriggersController@destroy')->name('admin.triggers.delete');
+
+
 
 /* Theme */
 Route::get('/admin/themes', 'AdminThemesController@show')->name('admin.themes.show');

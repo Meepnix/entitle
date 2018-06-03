@@ -23,14 +23,14 @@
                         {{ csrf_field() }}
                         {{ method_field('PATCH') }}
                         <div class="form-group">
-                            <label for="type1">Type</label>
+                            <label for="type1">Form</label>
                             <select name="type" id="type1">
                                 <option value="CRF" {{ $trigger->type == 'CRF' ? 'selected' : '' }}>CRF</option>
                                 <option value="YRBC" {{ $trigger->type == 'YRBC' ? 'selected' : '' }}>YRBC</option>
                             </select> <br>
                         </div>
                         <div class="form-group">
-                            <label for="trigger1">Filter</label>
+                            <label for="trigger1">Question</label>
                             <input type="text" class="form-control" id="trigger1" name="trigger" value="{{ $trigger->trigger }}"></input><br>
                         </div>
 
