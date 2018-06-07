@@ -10,6 +10,7 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
+                <h1><span class="badge badge-primary">Step E</span></h1>
                 <div class="panel-heading"><h2>Identify max themes:</h2></div>
                 <div class="panel-body">
 

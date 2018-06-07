@@ -16,11 +16,12 @@
                 <div class="panel-body">
 
                     @foreach ($theme->options as $key => $option)
-                    <div class="card">
+                    <div style="margin-bottom: 1.5em;" class="card">
                         <div class="card-header">
                             {{ $option->title }}
                         </div>
                         <div class="card-footer">
+                            {{-- If existing option saved edit instead of create. --}}
                             @if($snoption->find($option->id))
                             <a href="{{ route('options.edit', [$snap, $option]) }}" class="btn btn-primary">Open
                             </a>
@@ -36,7 +37,9 @@
                 </div>
 
                     <span class="pull-left">
-
+                        <a href="{{ route('themes.show', [$snap]) }}" class="btn btn-primary">
+                            <i class="fa fa-btn fa-arrow-circle-left"></i>Back
+                        </a>
                     </span>
 
                     @if (count($errors) > 0)
