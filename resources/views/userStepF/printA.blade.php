@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.print')
 
 @section('content')
 <div class="container">
@@ -10,13 +10,26 @@
 
     <div class="row">
         <div class="col">
-            <h1><span class="badge badge-primary">Step F</span></h1>
+            <div class="print-box hidden-print">
+                <i class="fa fa-print"></i> <a href="javascript:if(window.print)window.print()">Click here to print.</a>
+            </div>
+            <h1>Adviser actions</h1>
+
             @foreach($options as $option)
 
-            <h3>{{ $option->title }}</h3>
+            <div class="card" style="width: 50rem;">
+                <div class="card-body">
+                    <h3 class="card-title"><strong>{{ $option->title }}</strong></h3>
+                    <h4 class="card-subtitle mb-2 text-muted">ADVICE</h4>
+                    <p class="card-text">{{ $option->advice }}</p>
+                    <h4 class="card-subtitle mb-2 text-muted">AICs</h4>
+                    <p class="card-text">{{ $option->aic }}</p>
+                    <h4 class="card-subtitle mb-2 text-muted">LOCAL OUTCOMES CODES</h4>
+                    <p class="card-text">{{ $option->outcome }}</p>
 
-            <p>{{ $option->advice }}</p>
-
+                </div>
+            </div>
+            <p></p>
             @endforeach
         </div>
     </div>

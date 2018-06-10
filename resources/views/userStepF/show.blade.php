@@ -16,7 +16,7 @@
             <h1><span class="badge badge-primary">Step F</span></h1>
 
             <a href="{{ route('printA.show', [$snap])}}" target="_blank" class="btn btn-secondary">
-                Adviser
+                Adviser Actions
             </a>
         </div>
     </div>
