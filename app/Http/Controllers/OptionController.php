@@ -23,7 +23,7 @@ class OptionController extends Controller
 
         $theme = $option->themes;
 
-        return redirect()->route('options.show', [$snap, $theme ])
+        return redirect()->route('options.show', [$snap, $theme])
         ->with('flash_message', 'Option Saved');
 
     }

@@ -14,7 +14,6 @@
                 <h4>Scope:</h4>
                 <p>{{ $theme->scope }}</p>
                 <div class="panel-body">
-
                     @foreach ($theme->options as $key => $option)
                     <div style="margin-bottom: 1.5em;" class="card">
                         <div class="card-header">
@@ -32,9 +31,18 @@
 
                         </div>
                     </div>
-                </div>
                     @endforeach
                 </div>
+
+                    @if (count($errors) > 0)
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                    @endif
 
                     <span class="pull-left">
                         <a href="{{ route('themes.show', [$snap]) }}" class="btn btn-primary">
@@ -42,17 +50,6 @@
                         </a>
                     </span>
 
-                    @if (count($errors) > 0)
-                        <div class="alert alert-danger">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
-
-                </div>
             </div>
         </div>
     </div>

@@ -20,6 +20,13 @@ class Snap extends Model
 
     public function options()
     {
-        return $this->belongsToMany('App\Option')->withPivot('client', 'worker')->withTimestamps();
+        return $this->belongsToMany('App\Option')
+                    ->withPivot('client', 'worker')
+                    ->withTimestamps();
+    }
+
+    public function adviserOptions()
+    {
+        return $this->options()->wherePivot('worker', '=', '1');
     }
 }

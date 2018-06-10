@@ -43,6 +43,12 @@
                         </a>
                     </span>
 
+                    <span class="pull-right">
+                        <a href="{{ route('stepf.show', [$snap]) }}" class="btn btn-primary">
+                            Next <i class="fa fa-btn fa-arrow-circle-right"></i>
+                        </a>
+                    </span>
+
                 </div>
 
 
