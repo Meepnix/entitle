@@ -13,11 +13,25 @@ class SnapController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     public function store(Request $request)
     {
+        /**
+         * Create a new snapshot for the user.
+         *
+         * @param  \Illuminate\Http\Request  $request
+         * @return \Illuminate\Http\RedirectResponse
+         */
+
+         $request->validate([
+             'triggers' => 'required',
+         ]);
+
+
         $user = Auth::user();
+
         $snap = new Snap();
+
         $user->snaps()->save($snap);
 
         $themes = Theme::whereHas('triggers', function ($query) use ($request) {
@@ -33,6 +47,7 @@ class SnapController extends Controller
     {
         $snap->delete();
         session()->flash('flash_message', 'Snapshot deleted');
+
         return back();
     }
 }

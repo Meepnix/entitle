@@ -53,6 +53,17 @@
 
 
         </div>
+        @if (count($errors) > 0)
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
+
         <span class="pull-right">
             <button type="submit" class="btn btn-primary">Next <i class="fa fa-btn fa-arrow-circle-right"></i></button>
         </span>
@@ -72,7 +83,9 @@
 
 </div>
 
+
 </div>
+
 
 <script>
 

@@ -14,17 +14,22 @@
                 <div class="panel-heading"><h2>Identify max themes:</h2></div>
                 <div class="panel-body">
 
-                    @foreach ($themes as $theme)
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="{{ asset('img/test.png') }}" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ $theme->title }}</h5>
-                            <a href="{{ route('options.show', [$snap->id, $theme->id]) }}" class="btn btn-primary">Max options</a>
-                        </div>
-                    </div>
 
-                    @endforeach
-                </div>
+
+
+                    <div class="card-columns">
+                        @foreach ($themes as $theme)
+
+                        <div class="card">
+                            <img class="card-img-top" src="{{ asset('img/test.png') }}" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ $theme->title }}</h5>
+                                <a href="{{ route('options.show', [$snap->id, $theme->id]) }}" class="btn btn-primary">Max options</a>
+                            </div>
+                        </div>
+                        @endforeach
+
+                    </div>
 
 
                     @if (count($errors) > 0)
