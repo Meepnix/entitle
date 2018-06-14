@@ -10,6 +10,11 @@ use App\Option;
 
 class OptionController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function show(Snap $snap, Theme $theme)
     {
         $snoption = $snap->options;

@@ -25,6 +25,11 @@
                         <p>{{ $option->aic }}</p>
                         <h4>Local Outcomes</h4>
                         <p>{{ $option->outcome }}</p>
+                        <h4>Links</h4>
+                        @foreach ($option->links as $link)
+                        <h5>{{ $link->title }}</h5>
+                        <p>{{ $link->link }}</p>
+                        @endforeach
                         <p>
                             {{ Form::checkbox('client', 1, $pvoption->pivot->client) }}
                             <label for="client">Mark for inclusion in client Maximization list</label>

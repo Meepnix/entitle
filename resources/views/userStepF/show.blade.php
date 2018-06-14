@@ -18,6 +18,11 @@
             <a href="{{ route('printA.show', [$snap])}}" target="_blank" class="btn btn-secondary">
                 Adviser Actions
             </a>
+
+            <a href="{{ route('printC.show', [$snap])}}" target="_blank" class="btn btn-secondary">
+                Client Actions
+            </a>
+            
         </div>
     </div>
 

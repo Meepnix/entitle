@@ -11,6 +11,11 @@ use auth;
 
 class ThemeController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function show(Snap $snap)
     {
       $themes = $snap->themes;

@@ -29,4 +29,11 @@ class Snap extends Model
     {
         return $this->options()->wherePivot('worker', '=', '1');
     }
+
+    public function clientOptions()
+    {
+        return $this->options()->wherePivot('client', '=', '1');
+    }
+
+
 }

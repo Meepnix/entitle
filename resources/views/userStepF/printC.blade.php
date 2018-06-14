@@ -13,20 +13,18 @@
             <div class="d-print-none">
                 <i class="fa fa-print"></i> <a href="javascript:if(window.print)window.print()">Click here to print.</a>
             </div>
-            <h1>Adviser actions</h1>
+            <h1>Client actions</h1>
 
             @foreach ($options as $option)
 
             <div class="card">
                 <div class="card-body">
                     <h3 class="card-title"><strong>{{ $option->title }}</strong></h3>
-                    <h4 class="card-subtitle mb-2 text-muted">ADVICE</h4>
-                    <p class="card-text">{{ $option->advice }}</p>
-                    <h4 class="card-subtitle mb-2 text-muted">AICs</h4>
-                    <p class="card-text">{{ $option->aic }}</p>
-                    <h4 class="card-subtitle mb-2 text-muted">LOCAL OUTCOMES CODES</h4>
-                    <p class="card-text">{{ $option->outcome }}</p>
-
+                    <h4 class="card-subtitle mb-2 text-muted">LINKS</h4>
+                    @foreach ($option->links as $link)
+                    <h5 class="card-text">{{ $link->title }}</h5>
+                    <p class="card-text">{{ $link->link }}</p>
+                    @endforeach
                 </div>
             </div>
             <p></p>

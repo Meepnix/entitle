@@ -41,6 +41,7 @@ Route::get('/stepd', 'StepdController@show')->name('stepd.show');
 /* StedF */
 Route::get('/snaps/{snap}/stepf', 'StepfController@show')->name('stepf.show');
 Route::get('/snaps/{snap}/printAdviser', 'StepfController@printAdviser')->name('printA.show');
+Route::get('/snaps/{snap}/printClient', 'StepfController@printClient')->name('printC.show');
 
 /* Snap */
 Route::post('/snaps/store', 'SnapController@store')->name('snaps.store');

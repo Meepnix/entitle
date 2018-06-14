@@ -8,6 +8,11 @@ use App\Trigger;
 
 class StepdController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function show()
     {
         $triggersCRF = Trigger::where('type', 'CRF')->get();
