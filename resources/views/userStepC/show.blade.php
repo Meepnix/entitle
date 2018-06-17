@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
- <div id="app">
+<div id="app">
 <div class="container">
     @if (session()->has('flash_message'))
         <div id="savedMessage" class="alert alert-success" role="alert">
@@ -71,18 +71,14 @@
 
 <script>
 
+    var app = new Vue({
+        el: '#app',
+        data: {
+            stat1: false,
+            stat2: false,
+        }
+    })
 
-        var app = new Vue({
-            el: '#app',
-            data: {
-                stat1: false,
-                stat2: false,
-            }
-        })
-
-
-
-
-    </script>
+</script>
 
 @endsection
