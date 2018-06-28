@@ -20,6 +20,7 @@
     <link href="{{ asset('css/sidebar2.css') }}" rel="stylesheet">
 
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
     <style>
         body {
